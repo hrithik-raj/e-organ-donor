@@ -17,7 +17,7 @@ I did this project to understand Django more deeply
     Execute the command 'env_name'\Scripts\activate
   * Mac:
     Execute the command source 'env_name'/bin/activate
-### (This is very important before you proceed.) ###
-### (Make sure you activate) ###
+### (This is very important before you proceed.
+     Make sure you activate) ###
 * The requirements.txt is included in the repository so jus execute the command pip install -r requirements.txt
 * You can also choose to install them one by one
