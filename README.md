@@ -23,3 +23,7 @@ I did this project to understand Django more deeply
 * Once the packages are installed now the only thing left is to run the application.
 * Execute python manage.py runserver (Make sure you are in the directory with the file manage.py).
 * Enter the address 127.0.0.1:8000 in your browser to view.
+
+
+## If you want your own data in the database ##
+You must delete the db.sqlite 3 and run migrations once again and before running migrations do delete the files inside migrations directory inside every directory in  the project
