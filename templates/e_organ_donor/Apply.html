@@ -1,0 +1,28 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Welcome</title>
+    <link rel="icon" href="{% static 'img/organs/icons8_heart_puzzle.ico' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+    {% include 'Base/_messages.html' %}
+        <div class="card">
+            <div class="card-body">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="organ_bank">Organ Bank:</label>
+                        <select id="organ_bank" name="organ_bank" class="form-control">
+                            {% for i in organ_banks %}
+                                <option>{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input type="submit" value="Apply" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/all.css' %}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<style>
+    body {
+        background-color: deepskyblue;
+    }
+</style>
+<body>
+<div class="text-center">
+    <div class="card mt-5" style="max-width: 500px; margin: auto">
+        <div class="card-body">
+            <form id="register_form" action="{% url 'register-view' %}" method="POST"
+                  style="max-width: 420px; margin: auto">
+                <img src="{% static 'img/icons8_add.svg' %}" height="72" class="mt-5 mb-5" alt="register"/>
+
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username"
+                           value="{{ field_values.username }}"
+                           id="username-field"
+                           class="form-control form-control-sm">
+                </div>
+                <div class="invalid-username-feedback" style="display: none"></div>
+
+                <div class="form-group">
+                    <input type="text" name="first_name" placeholder="First Name"
+                           value="{{ field_values.first_name }}"
+                           id="first_name"
+                           class="form-control form-control-sm">
+                </div>
+
+                 <div class="form-group">
+                    <input type="text" name="last_name" placeholder="Last Name"
+                           value="{{ field_values.last_name }}"
+                           id="last_name"
+                           class="form-control form-control-sm">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" value="{{ field_values.email }}"
+                           id="email-field"
+                           class="form-control form-control-sm">
+                </div>
+                <div class="invalid-email-feedback" style="display: none"></div>
+
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" id="password-field"
+                           class="form-control form-control-sm"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="phone" placeholder="Mobile Number" value="{{ field_values.phone }}"
+                           id="mobile-number-field"
+                           class="form-control form-control-sm"/>
+                </div>
+
+                <div class="form-group">
+                    <select name="blood_type" class="form-control form-control-sm">
+                            <option selected>--blood type--</option>
+                            <option>A +ve</option>
+                            <option>B +ve</option>
+                            <option>O +ve</option>
+                            <option>AB +ve</option>
+                            <option>A -ve</option>
+                            <option>B -ve</option>
+                            <option>O -ve</option>
+                            <option>AB -ve<option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="state" class="form-control form-control-sm">
+                        <option selected>--state--</option>
+                        {% for state in states %}
+                            <option>{{ state.key }} - {{ state.value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="city" placeholder="City" id="city-field"
+                           class="form-control form-control-sm"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="address" placeholder="Address" id="address-field"
+                           class="form-control form-control-sm"/>
+                </div>
+
+                <input type="submit" value="Register" id="submit_btn" class="btn btn-block btn-primary">
+            </form>
+
+            <div class="card mt-5">
+                <div class="card-body alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    <p class="text-info">
+                        Please Verify your Account before you Sign In
+                    </p>
+                    {% include 'Base/_messages.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    feather.replace()
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

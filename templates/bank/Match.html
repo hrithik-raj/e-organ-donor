@@ -1,0 +1,45 @@
+{% extends 'bank/_bank_base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Match for {{ username }}
+    <link rel="icon" href="{% static 'img/organs/icons8_heart_puzzle.ico' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div>
+            <h1 class="match_title">Potential Matches for {{ username }}</h1>
+        </div>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <td>Organs Required</td>
+                <td>Organs Available</td>
+                <td>Donor</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i,j in matches.items %}
+                <tr>
+                    <td>{{ i|capfirst }}</td>
+                    <td>
+                        {% if j.0 %}
+                            <img src="{% static 'img/icons8_checkmark.svg' %}" alt="" style="height: 20px; width: 20px">
+                        {% else %}
+                            <img src="{% static 'img/icons8_delete.svg' %}" alt="" style="height: 20px; width: 20px">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if j.1 == None%}
+                            Empty
+                        {% else %}
+                            {{ j.1 }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

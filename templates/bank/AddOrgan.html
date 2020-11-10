@@ -1,0 +1,68 @@
+{% extends 'bank/_bank_base.html' %}
+{% load static %}
+{% block title_block %}
+    Add Organs ({{ branch_name }})
+    <link rel="icon" href="{% static 'img/organs/icons8_heart_puzzle.ico' %}">
+{% endblock %}
+{% block content %}
+    <h1 class="display-4 ml-5 mt-5 text-center branch_name">{{ branch_name }}</h1>
+    <div class="container" style="width: 50%">
+        {% include 'Base/_messages.html' %}
+        <div class="card">
+            <div class="card-header">
+                Add Organs
+            </div>
+            <div class="card-body">
+                <form action="{% url 'add_organs' branch_id %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="donor_name">Donor Name:</label>
+                        <input type="text" id="donor_name" name="donor_name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="blood_type" class="">Blood Type of the Candidate:</label>
+                        <select id="blood_type" name="blood_type" class="form-control">
+                            <option selected>--blood type--</option>
+                            <option>A +ve</option>
+                            <option>B +ve</option>
+                            <option>O +ve</option>
+                            <option>AB +ve</option>
+                            <option>A -ve</option>
+                            <option>B -ve</option>
+                            <option>O -ve</option>
+                            <option>AB -ve<option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="heart" name="heart" value="heart">
+                        <label for="heart">Heart</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="kidney" name="kidney" value="kidney">
+                        <label for="kidney">Kidney</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="liver" name="liver" value="liver">
+                        <label for="liver">Liver</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="cornea" name="cornea" value="cornea">
+                        <label for="cornea">Eye</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="lung" name="lung" value="lung">
+                        <label for="lung">Lung</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="pancreas" name="pancreas" value="pancreas">
+                        <label for="pancreas">Pancreas</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-success mt-2">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

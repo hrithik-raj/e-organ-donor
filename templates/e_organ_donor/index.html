@@ -1,0 +1,165 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Welcome</title>
+    <link rel="icon" href="{% static 'img/organs/icons8_heart_puzzle.ico' %}">
+{% endblock %}
+{% block content %}
+    <div class="user-det">
+        <p>({{ user }})</p>
+    </div>
+    <div class="sign-out">
+        <form action="{% url 'logout-view' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Sign Out" class="btn btn-danger btn-sm">
+        </form>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/icons8_medical_heart.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Heart</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.heart %}
+                                <input type="checkbox" class="custom-control-input" id="heart" name="heart" checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="heart" name="heart">
+                            {% endif %}
+
+                            <label class="custom-control-label" for="heart">Heart</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/icons8_kidney.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kidney</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.kidney %}
+                                <input type="checkbox" class="custom-control-input" id="kidney" name="kidney"
+                                       checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="kidney" name="kidney">
+                            {% endif %}
+                            <label class="custom-control-label" for="kidney">Kidney</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/icons8_liver.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Liver</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.liver %}
+                                <input type="checkbox" class="custom-control-input" id="liver" name="liver" checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="liver" name="liver">
+                            {% endif %}
+                            <input type="checkbox" class="custom-control-input" id="liver" name="liver">
+                            <label class="custom-control-label" for="liver">Liver</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/icons8_eye.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Eye</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.cornea %}
+                                <input type="checkbox" class="custom-control-input" id="eye" name="eye" checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="eye" name="eye">
+                            {% endif %}
+                            <label class="custom-control-label" for="eye">Eye</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/icons8_lungs.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lungs</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.lung %}
+                                <input type="checkbox" class="custom-control-input" id="lungs" name="lungs" checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="lungs" name="lungs">
+                            {% endif %}
+
+                            <label class="custom-control-label" for="lungs">Lungs</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/organs/pancreas.svg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pancreas</h5>
+                        <p class="card-text">The heart is a muscular organ in most animals, which pumps blood
+                            through
+                            the blood
+                            vessels of the circulatory system.</p>
+                        <!-- Check Switch -->
+                        <div class="custom-control custom-switch">
+                            {% if organ_requirements.pancreas %}
+                                <input type="checkbox" class="custom-control-input" id="pancreas" name="pancreas" checked>
+                            {% else %}
+                                <input type="checkbox" class="custom-control-input" id="pancreas" name="pancreas">
+                            {% endif %}
+
+                            <label class="custom-control-label" for="pancreas">Pancreas</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <a class="btn btn-primary btn-lg mb-5" style="position: relative; left: 60rem" href="{% url 'apply_view' %}">Apply Now</a>
+    </div>
+    <script src="{% static 'js/organ update.js' %}"></script>
+{% endblock %}
+
+

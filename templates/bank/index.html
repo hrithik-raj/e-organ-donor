@@ -1,0 +1,106 @@
+{% extends 'bank/_bank_base.html' %}
+{% load static %}
+{% block title_block %}
+    {{ branch_name }}
+{% endblock %}
+
+
+{% block content %}
+    <a class="btn btn-info add-organs-button" href="{% url 'add_organs' branch_id %}">Add Organs</a>
+    <div class="container mt-5">
+        <div class="row">
+            <table class="table table-dark">
+                <thead>
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Blood Type</th>
+                    <th scope="col">Heart</th>
+                    <th scope="col">Kidney</th>
+                    <th scope="col">Liver</th>
+                    <th scope="col">Eye</th>
+                    <th scope="col">Lung</th>
+                    <th scope="col">Pancreas</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for patient in patient_details %}
+                    <tr>
+                        <th scope="row">{{ patient.name }}</th>
+                        <td>{{ patient.blood_type }}</td>
+                        <td>
+                            {% if patient.heart %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if patient.kidney %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if patient.liver %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if patient.cornea %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if patient.lung %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if patient.pancreas %}
+                                <img src="{% static 'img/icons8_checkmark.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% else %}
+                                <img src="{% static 'img/icons8_delete.svg' %}" alt=""
+                                     style="height: 20px; width: 20px">
+                            {% endif %}
+                        </td>
+                        <td><a class="btn btn-success btn-sm find-matches-button"
+                               href="{% url 'match' branch_id patient.id %}">Find Matches</a>
+                        </td>
+                        <td>
+                            <a class="delete_link" href="{% url 'delete' branch_id patient.id %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="red" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-trash-2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

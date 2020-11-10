@@ -1,0 +1,42 @@
+*{
+    font-family: Roboto, sans-serif;
+}
+
+.user-det{
+    position: absolute;
+    color: white;
+    top: 15px;
+    right: 185px;
+}
+
+.sign-out{
+    position: absolute;
+    top: 12px;
+    right: 100px;
+}
+
+.add-organs-button{
+    position: relative;
+    top: 2rem;
+    left: 80%;
+}
+
+.branch_name{
+    position: relative;
+    left: 26.9rem;
+    width: 50%;
+    color: aliceblue;
+    padding: 1rem;
+    border: #F8FAF5 0.25rem solid;
+    border-radius: 10px;
+}
+
+.match_title{
+    color: aliceblue;
+    border: #F8FAF5 0.25rem solid;
+    padding: 1rem;
+}
+
+.delete_link:hover{
+    cursor: pointer;
+}
