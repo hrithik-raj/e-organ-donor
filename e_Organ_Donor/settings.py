@@ -126,8 +126,10 @@ MESSAGE_TAGS = {
 
 # email variables
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'pivot.io.sender@gmail.com'
+# Change your email
+EMAIL_HOST_USER = 'e.organdonor@gmail.com'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'pivot.io.sender@gmail.com'
-EMAIL_HOST_PASSWORD = 'Ashwin0208'
+# Change your password
+EMAIL_HOST_PASSWORD = 'eod123456'
 EMAIL_PORT = 587

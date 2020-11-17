@@ -1,1 +1,17 @@
 {% extends 'Base/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron">
+                    <p class="lead"><span class="hard-text">Email:</span> e.organdonor@gmail.com</p>
+                    <p class="lead"><span class="hard-text">Mobile:</span> 9999966666</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{% static 'img/organ-donation1.jpg' %}" alt="...">
+            </div>
+        </div>
+    </div>
+{% endblock %}
