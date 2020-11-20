@@ -129,7 +129,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 # Change your email
 EMAIL_HOST_USER = 'e.organdonor@gmail.com'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'pivot.io.sender@gmail.com'
+DEFAULT_FROM_EMAIL = 'e.organdonor@gmail.com'
 # Change your password
 EMAIL_HOST_PASSWORD = 'eod123456'
 EMAIL_PORT = 587
